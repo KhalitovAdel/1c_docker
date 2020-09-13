@@ -17,7 +17,7 @@ initDataBase() {
     --dbms=PostgreSQL \
     --db-server=1c-postgres \
     --db-name=tkani \
-    --locale=ru_RU.utf8 \
+    --locale=ru \
     --db-user=postgres \
     --db-pwd= \
     --license-distribution=allow
@@ -26,7 +26,9 @@ initDataBase() {
 #docker run --name 1c-postgres \
 #   --network 1c-network \
 #   --expose 5432 \
+#   --restart=always \
 #   -d rsyuzyov/docker-postgresql-pro-1c
+#docker build -t 1c . && docker run --name 1c -p 1540-1541:1540-1541 -p 1560-1591:1560-1591 --restart=always --network 1c-network -d 1c
 if [ "$1" = "init" ]
 then
   echo "$1"
