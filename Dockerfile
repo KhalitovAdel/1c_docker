@@ -7,7 +7,7 @@ RUN apt update \
         libgsf-1-114
 
 # Install 1C
-COPY /dist/*.deb ./
+COPY ./*.deb ./
 
 RUN dpkg -i 1c-enterprise83-common_* \
     1c-enterprise83-server_* \
