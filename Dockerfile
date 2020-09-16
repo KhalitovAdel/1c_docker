@@ -4,17 +4,13 @@ RUN apt update \
     && apt install -y imagemagick \
         unixodbc \
         ttf-mscorefonts-installer \
-        libgsf-1-114 \
-        lsof \
-        nano \
-        locales
+        libgsf-1-114
 
 # Install 1C
-COPY ./*.deb ./
+COPY /dist/*.deb ./
 
 RUN dpkg -i 1c-enterprise83-common_* \
     1c-enterprise83-server_* \
-    1c-enterprise83-ws_* \
     && rm *.deb
 
 # Add logs
